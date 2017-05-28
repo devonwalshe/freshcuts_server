@@ -1,0 +1,11 @@
+= form_with(model: affiliate, local: true) do |form|
+  - if affiliate.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(affiliate.errors.count, "error")
+        prohibited this affiliate from being saved:
+      %ul
+        - affiliate.errors.full_messages.each do |message|
+          %li= message
+  .actions
+    = form.submit

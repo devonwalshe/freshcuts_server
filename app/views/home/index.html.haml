@@ -1,0 +1,12 @@
+=render 'layouts/header'
+.container-fluid.header-bar
+  .container
+    .row
+      .col-md-10.col-md-offset-1
+        %h1 Search
+        =form_tag "/search", method: 'get' do
+          =search_field_tag :q, nil, :placeholder=>"Search for delicious meat", :class=>"form-control"
+        
+
+.container.body-wrapper
+  %h1 Main content goes here
