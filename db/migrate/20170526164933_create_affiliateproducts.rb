@@ -1,6 +1,9 @@
 class CreateAffiliateproducts < ActiveRecord::Migration[5.1]
   def change
     create_table :affiliate_products do |t|
+      t.string :affiliate_product_title
+      t.string :affiliate_product_description
+
       t.float :price 
       t.float :discount 
       t.integer :product_id 

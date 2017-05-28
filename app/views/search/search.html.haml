@@ -1,2 +1,13 @@
 =render 'layouts/header'
+
+Searching for:
+=params[:q]
 =@query
+%br
+%br
+-@search.results.each do |result|
+  =link_to result.affiliate_product_title, result.affiliate_product_url
+  %br
+  =result.affiliate_product_description
+  %br
+  %br

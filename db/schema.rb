@@ -16,6 +16,8 @@ ActiveRecord::Schema.define(version: 20170526165802) do
   enable_extension "plpgsql"
 
   create_table "affiliate_products", force: :cascade do |t|
+    t.string "affiliate_product_title"
+    t.string "affiliate_product_description"
     t.float "price"
     t.float "discount"
     t.integer "product_id"

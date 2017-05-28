@@ -1,7 +1,10 @@
 class SearchController < ApplicationController
 
     def search
-        @query = params[:q]
+        console
+        @search = AffiliateProduct.search do |query| 
+            query.fulltext params[:q]
+        end
     end
 
 end
