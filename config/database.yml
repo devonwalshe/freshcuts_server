@@ -17,6 +17,7 @@ production:
   encoding: unicode
   database: freshcuts
   pool: 5
-  host: localhost
-  username: azymuth
-  password: 
+  host: db
+  username: postgres
+  password:
+  port: 5432
