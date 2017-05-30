@@ -1,0 +1,6 @@
+// load the new results
+$('.search-results').html("#{escape_javascript(render partial: 'results', locals: {results: @results})}");
+// remove the pagination if there is any
+$('.search-pagination').empty().html('#{escape_javascript(paginate @results)}')
+// reset the scroll binding for infinite scroll if its been removed on the page
+window.bind_scroll(); 

@@ -1,13 +1,18 @@
 =render 'layouts/header'
 
-Searching for:
-=params[:q]
-=@query
-%br
-%br
--@search.results.each do |result|
-  =link_to result.affiliate_product_title, result.affiliate_product_url
-  %br
-  =result.affiliate_product_description
-  %br
-  %br
+.container_fluid.nav-bar
+  
+.container
+  .row
+    .col-md-3
+      .search-mixer
+        =render 'mixer'
+    .col-md-9
+      Searching for
+      =params[:q]
+      %br
+      %br
+      .search-results
+        =render partial: 'results', locals: {results: @results}  
+      .search-pagination
+        =paginate @search.results
