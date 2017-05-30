@@ -11,6 +11,8 @@ services:
         depends_on:
          - db
          - solr-jetty
+        environment:
+         - VIRTUAL_HOST=freshcuts.local 
 
     solr-jetty:
         image: rorymc/docker-solr-sunspot
@@ -20,3 +22,17 @@ services:
         image: postgres:9.6.3-alpine
         ports:
          - '5431:5432'
+    nginx-proxy:
+        image: jwilder/nginx-proxy:alpine
+        container_name: nginx-proxy
+        ports:
+         - '80:80'
+        volumes:
+         - /var/run/docker.sock:/tmp/docker.sock:ro
+    whoami:
+        image: jwilder/whoami
+        container_name: whoami
+        environment: 
+          - VIRTUAL_HOST=whoami.local
+
+
