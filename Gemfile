@@ -60,5 +60,7 @@ gem 'progress_bar'
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'bootstrap-will_paginate'
+gem 'devise'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 #gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

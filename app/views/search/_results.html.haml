@@ -1,4 +1,6 @@
 -results.each do |result|
+  -if result.affiliate_product_title == nil
+    nil record  
   =link_to result.affiliate_product_title, result.affiliate_product_url
   %br
   =result.affiliate_product_description
