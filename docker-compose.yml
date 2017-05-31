@@ -12,7 +12,7 @@ services:
          - db
          - solr
         environment:
-         - VIRTUAL_HOST=freshcuts.local 
+         - VIRTUAL_HOST=freshcuts.daemon.me.uk
 
     solr:
         build: dockerfiles/solr/.
@@ -21,7 +21,7 @@ services:
     db:
         image: postgres:9.6.3-alpine
         ports:
-         - '5431:5432'
+         - '5431:5433'
     nginx-proxy:
         image: jwilder/nginx-proxy:alpine
         container_name: nginx-proxy
@@ -29,10 +29,5 @@ services:
          - '80:80'
         volumes:
          - /var/run/docker.sock:/tmp/docker.sock:ro
-    whoami:
-        image: jwilder/whoami
-        container_name: whoami
-        environment: 
-          - VIRTUAL_HOST=whoami.local
 
 
