@@ -1,5 +1,5 @@
 var bind_scroll = function() {
-  console.log('bind setup');
+  //console.log('bind setup');
   if ($('.search-pagination').size() > 0) {
     return $(window).on('scroll', function() {
       //console.log('scrolling function')

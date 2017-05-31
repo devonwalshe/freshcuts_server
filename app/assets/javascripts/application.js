@@ -16,3 +16,6 @@
 //= require_tree .
 //= require bootstrap-sprockets
 //= require pagination
+//= require ahoy
+//= require main
+ahoy.trackAll()

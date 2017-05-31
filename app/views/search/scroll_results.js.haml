@@ -2,7 +2,7 @@ $('.search-results').append("#{escape_javascript(render partial: 'results', loca
 -if @results.next_page
   $('.pagination').replaceWith('#{escape_javascript( paginate @results)}');
 -else
-  console.log("scroll bind is being turned off")
+  //console.log("scroll bind is being turned off")
   $(window).off('scroll');
   $('.pagination').remove();
   
