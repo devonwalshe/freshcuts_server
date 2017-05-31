@@ -1,7 +1,7 @@
 FROM ruby:2.4.1-alpine
 
 RUN apk add --no-cache --update \
-        postgresql-dev libxml2-dev zlib-dev tzdata yaml-dev build-base nodejs
+        postgresql-dev libxml2-dev zlib-dev tzdata yaml-dev build-base nodejs \
     && rm -rf /var/cache/* \
     && rm -rf /root/.cache
 
