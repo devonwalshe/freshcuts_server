@@ -25,4 +25,4 @@
 .env
 
 # Completely ignore solr
-solr/
+/solr/
