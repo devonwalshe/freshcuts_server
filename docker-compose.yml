@@ -12,7 +12,7 @@ services:
          - db
          - solr
         environment:
-         - VIRTUAL_HOST=freshcuts.daemon.me.uk
+         - VIRTUAL_HOST=fc.daemon.me.uk
 
     solr:
         build: dockerfiles/solr/.
