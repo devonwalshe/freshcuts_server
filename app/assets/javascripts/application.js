@@ -18,4 +18,4 @@
 //= require pagination
 //= require ahoy
 //= require main
-ahoy.trackAll()
+ahoy.trackAll();
