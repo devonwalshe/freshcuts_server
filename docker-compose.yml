@@ -1,7 +1,7 @@
 version: '3'
 services:
     web:
-        build: .
+        build: dockerfiles/server/.
         command: bundle exec rails s -p 3000 -b '0.0.0.0' -e production
         env_file: .env
         volumes:
@@ -10,12 +10,12 @@ services:
          - "3001:3000"
         depends_on:
          - db
-         - solr-jetty
+         - solr
         environment:
          - VIRTUAL_HOST=freshcuts.local 
 
-    solr-jetty:
-        image: rorymc/docker-solr-sunspot
+    solr:
+        build: dockerfiles/solr/.
         ports:
          - "8983:8983"
     db:
