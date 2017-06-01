@@ -2,6 +2,7 @@ version: '3'
 services:
     web:
         build: .
+        image: fc_web:latest
         command: bundle exec rails s -p 3000 -b '0.0.0.0' -e production
         env_file: .env
         volumes:
@@ -16,6 +17,7 @@ services:
 
     solr:
         build: dockerfiles/solr/.
+        image: fc_solr:latest
         ports:
          - "8983:8983"
     db:
