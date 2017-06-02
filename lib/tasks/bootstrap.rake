@@ -15,7 +15,7 @@ namespace :bootstrap do
             # ["description", "title", "price", "discount", "weight", "url", "product_id", "in_stock", "image_url", "crawled_at"]
             #["id", "price", "discount", "product_id", "name", "affiliate_id", "weight", "affiliate_product_id", "affiliate_product_url", "crawled_at", "in_stock", "created_at", "updated_at"]
             description = ap['description'][0].strip unless ap['description'][0] == nil
-            af = AffiliateProduct.find_or_create_by(price: ap['price'], discount: ap['discount'], weight: ap['weight'], affiliate_product_id: ap['product_id'], affiliate_product_url: ap['url'], crawled_at:ap['crawled_at'], affiliate_id:a.id, affiliate_product_title:ap['title'], affiliate_product_description:description affiliate_product_image_url:ap['image_url']) 
+            af = AffiliateProduct.find_or_create_by(price: ap['price'], discount: ap['discount'], weight: ap['weight'], affiliate_product_id: ap['product_id'], affiliate_product_url: ap['url'], crawled_at:ap['crawled_at'], affiliate_id:a.id, affiliate_product_title:ap['title'], affiliate_product_description:description, affiliate_product_image_url:ap['image_url']) 
         end
 
     end
