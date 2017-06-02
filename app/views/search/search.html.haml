@@ -1,4 +1,5 @@
-=render 'layouts/header'
+.row
+  =render 'layouts/header'
 
 .container_fluid.nav-bar
   
@@ -14,6 +15,7 @@
       %br
       %br
       .search-results
-        =render partial: 'results', locals: {results: @results}  
+        .row
+          =render partial: 'results', locals: {results: @results}  
       .search-pagination
         =paginate @search.results

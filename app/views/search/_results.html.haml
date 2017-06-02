@@ -1,8 +1,23 @@
 -results.each do |result|
-  -if result.affiliate_product_title == nil
-    nil record  
-  =link_to result.affiliate_product_title, result.affiliate_product_url
-  %br
-  =result.affiliate_product_description
-  %br
-  %br
+  .col-md-4
+    .result-card
+      %a{:href => "#{result.affiliate_product_url}"}
+        //.rc-image{:style=>"background-image:url(#{image_url('uncooked-marbled-steak')});"}
+        .rc-image{:style=>"background-image:url(#{result.affiliate_product_image_url})"}
+          .rc-title
+            =result.affiliate_product_title
+      //.rc-description
+      //=result.affiliate_product_description
+      %div{:class => "#{result.discount ? 'rc-details-rust' : 'rc-details-blue'}"}
+        .rc-price
+          -if result.discount
+            .rc-price-discount
+              ='£'+'%.2f' % result.price unless result.price == nil
+          -else 
+            ='£'+'%.2f' % result.price unless result.price == nil
+        .rc-discount
+          = '£'+ '%.2f' % (result.price - (result.discount * result.price)).to_s unless result.discount == nil    
+        .rc-weight
+          = "Weight: " + result.weight.round(2).to_s + "kg" unless result.weight == nil
+          = " – £" + '%.2f' % (result.price / result.weight) + " / kg" unless result.weight == nil
+        .rc-ppk
