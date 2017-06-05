@@ -16,6 +16,7 @@
  // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import 'neat';
 
 // colours
 $skyblue: #C3DFE0;
@@ -45,7 +46,7 @@ a:hover, a:active, a:visited, a{
 }
 .fp-bg-image{
     margin:0;
-    background-size: 100%;
+    background-size: cover;
     height:100vh;
     background-image: image-url('steak-perfectly-cooked.jpg');
     background-repeat: no-repeat;

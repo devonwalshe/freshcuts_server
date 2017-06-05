@@ -25,7 +25,7 @@
 .env
 
 # Assets
-/public/assets/*
+/public/images/*
 
-# Completely ignore solr
+# Completely ignore development solr
 /solr/

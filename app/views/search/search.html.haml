@@ -13,9 +13,9 @@
       .search-term
         =params[:q]
       %br
-      %br
-      .search-results
-        .row
+      %br      
+      .row
+        .search-results
           =render partial: 'results', locals: {results: @results}  
       .search-pagination
         =paginate @search.results

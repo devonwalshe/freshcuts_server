@@ -3,7 +3,7 @@
     .result-card
       %a{:href => "#{result.affiliate_product_url}"}
         //.rc-image{:style=>"background-image:url(#{image_url('uncooked-marbled-steak')});"}
-        .rc-image{:style=>"background-image:url(#{result.affiliate_product_image_url})"}
+        .rc-image{:style=>"background-image:url(#{result.images.first.asset.url(:small)})"}
           .rc-title
             =result.affiliate_product_title
       //.rc-description

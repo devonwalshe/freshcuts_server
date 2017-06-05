@@ -1,13 +1,17 @@
 class AffiliateProduct < ApplicationRecord
 
     ### Relations
-    belongs_to :affiliate, optional: true
-    belongs_to :product, optional: true
+    belongs_to :affiliate
+    belongs_to :product
+    has_many :images, as: :imageable
 
     ### Sunspot
     searchable do
         text :affiliate_product_title 
     end
+
+    ### Scopes
+    scope :no_images, -> {where.not(affiliate_product_image_url: nil).left_outer_joins(:images).where(images: {imageable_id: nil})}
 
 end
 

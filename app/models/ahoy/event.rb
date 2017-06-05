@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: ahoy_events
+#
+#  id         :integer          not null, primary key
+#  visit_id   :integer
+#  user_id    :integer
+#  name       :string
+#  properties :text
+#  time       :datetime
+#
+
 module Ahoy
   class Event < ActiveRecord::Base
     include Ahoy::Properties
@@ -5,7 +17,7 @@ module Ahoy
     self.table_name = "ahoy_events"
 
     belongs_to :visit
-    belongs_to :user, optional: true
+    belongs_to :user
 
     serialize :properties, JSON
   end
