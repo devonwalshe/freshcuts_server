@@ -1,14 +1,25 @@
+class Post < ApplicationRecord
+
+    ### Associations
+    has_many :taggings, as: :taggable, dependent: destroy
+    has_many :tags, :through => :taggings
+
+end
+
 # == Schema Information
 #
 # Table name: posts
 #
 #  id         :integer          not null, primary key
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  title      :string
+#  content    :text
+#  abstract   :text
+#  standfirst :text
+#  footnote   :text
+#  template   :text
+#  user_id    :integer
+#  published  :boolean
+#  featured   :boolean
+#  created_at :datetime
+#  updated_at :datetime
 #
-
-class Post < ApplicationRecord
-
-    ### Associations
-
-end

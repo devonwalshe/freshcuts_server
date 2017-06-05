@@ -1,15 +1,3 @@
-# == Schema Information
-#
-# Table name: ahoy_events
-#
-#  id         :integer          not null, primary key
-#  visit_id   :integer
-#  user_id    :integer
-#  name       :string
-#  properties :text
-#  time       :datetime
-#
-
 module Ahoy
   class Event < ActiveRecord::Base
     include Ahoy::Properties
@@ -22,3 +10,15 @@ module Ahoy
     serialize :properties, JSON
   end
 end
+
+# == Schema Information
+#
+# Table name: ahoy_events
+#
+#  id         :integer          not null, primary key
+#  visit_id   :integer
+#  user_id    :integer
+#  name       :string
+#  properties :text
+#  time       :datetime
+#

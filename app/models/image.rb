@@ -21,7 +21,6 @@ class Image < ApplicationRecord
 
 end
 
-
 # == Schema Information
 #
 # Table name: images
@@ -37,4 +36,3 @@ end
 #  asset_file_size    :integer
 #  asset_updated_at   :datetime
 #
-

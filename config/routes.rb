@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+
   root 'home#index'
 
   get 'search' => 'search#search', as: :search
@@ -11,5 +11,9 @@ Rails.application.routes.draw do
   resources :affiliateproducts
   resources :affiliates
   resources :products
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :pages
+
+  ### Content
+  get 'meaty_tales' => "pages#home", as: :content
+  
 end

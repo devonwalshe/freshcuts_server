@@ -1,0 +1,32 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  page_type: MyString
+  parent_id: 1
+  enabled: false
+  properties: MyText
+  url: MyString
+
+two:
+  title: MyString
+  page_type: MyString
+  parent_id: 1
+  enabled: false
+  properties: MyText
+  url: MyString
+
+# == Schema Information
+#
+# Table name: pages
+#
+#  id         :integer          not null, primary key
+#  title      :string
+#  page_type  :string
+#  parent_id  :integer
+#  enabled    :boolean
+#  properties :text
+#  url        :string
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#

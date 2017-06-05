@@ -29,6 +29,7 @@ end
 #  weight                        :float
 #  affiliate_product_id          :integer
 #  affiliate_product_url         :string
+#  affiliate_product_image_url   :string
 #  crawled_at                    :datetime
 #  in_stock                      :boolean
 #  created_at                    :datetime         not null

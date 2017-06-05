@@ -1,3 +1,9 @@
+class Tag < ApplicationRecord
+    ### Associations
+    has_many :taggings
+
+end
+
 # == Schema Information
 #
 # Table name: tags
@@ -7,9 +13,3 @@
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
-
-class Tag < ApplicationRecord
-    ### Associations
-    has_many :taggings
-
-end

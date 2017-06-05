@@ -1,3 +1,10 @@
+class User < ApplicationRecord
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable, :lockable, :confirmable, :timeoutable,
+         :recoverable, :rememberable, :trackable, :validatable
+end
+
 # == Schema Information
 #
 # Table name: users
@@ -23,10 +30,3 @@
 #  created_at             :datetime         not null
 #  updated_at             :datetime         not null
 #
-
-class User < ApplicationRecord
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable, :lockable, :confirmable, :timeoutable,
-         :recoverable, :rememberable, :trackable, :validatable
-end

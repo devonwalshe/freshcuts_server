@@ -1,3 +1,11 @@
+class Product < ApplicationRecord
+    ### Associations
+    has_many :affiliateproducts
+    has_many  :taggings, :as => :taggable
+    has_many  :tags, :through => :taggings
+
+end
+
 # == Schema Information
 #
 # Table name: products
@@ -8,11 +16,3 @@
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #
-
-class Product < ApplicationRecord
-    ### Associations
-    has_many :affiliateproducts
-    has_many  :taggings, :as => :taggable
-    has_many  :tags, :through => :taggings
-
-end

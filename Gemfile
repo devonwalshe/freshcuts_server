@@ -58,5 +58,7 @@ gem 'progress_bar'
 gem 'kaminari'
 gem 'bootstrap-will_paginate'
 gem 'devise'
-gem 'ahoy_matey'
+gem 'ahoy_matey', '1.6.0'
 gem 'paperclip'
+#gem 'fae-rails', :git => "https://github.com/devonwalshe/fae.git"
+gem 'comfortable_mexican_sofa', '~> 1.12.0'

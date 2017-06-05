@@ -1,3 +1,10 @@
+class Affiliate < ApplicationRecord
+
+    ### Associations
+    has_many :affiliateproducts
+
+end
+
 # == Schema Information
 #
 # Table name: affiliates
@@ -10,10 +17,3 @@
 #  created_at       :datetime         not null
 #  updated_at       :datetime         not null
 #
-
-class Affiliate < ApplicationRecord
-
-    ### Associations
-    has_many :affiliateproducts
-
-end
