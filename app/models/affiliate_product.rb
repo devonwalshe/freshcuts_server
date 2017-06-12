@@ -1,9 +1,14 @@
 class AffiliateProduct < ApplicationRecord
+    ### Callbacks
+    before_create :add_tags
+
 
     ### Relations
     belongs_to :affiliate
     belongs_to :product
     has_many :images, as: :imageable
+    has_many :taggings, as: :taggable, dependent: :destroy
+    has_many :tags, :through => :taggings
 
     ### Sunspot
     searchable do
@@ -12,7 +17,23 @@ class AffiliateProduct < ApplicationRecord
 
     ### Scopes
     scope :no_images, -> {where.not(affiliate_product_image_url: nil).left_outer_joins(:images).where(images: {imageable_id: nil})}
-
+    
+    
+    ### Class methods
+    def add_tags
+        ### Get tagslist from file
+        require Rails.root + 'lib/import/meat_list.rb'
+        list = MEAT_TAG_LIST.uniq
+        ### Get index numbers of elements that exist in the title
+        ap_title_tags = list.size.times.select{|i| self.affiliate_product_title.downcase.include?(list[i])}.map{|i| list[i]}.uniq
+        ### Get or create tags and attach them to our AP object
+        taglist = []
+        ap_title_tags.each do |tag|
+            t = Tag.where(name: tag).first_or_create
+            taglist << t
+        end
+        self.tags = taglist
+    end
 end
 
 # == Schema Information

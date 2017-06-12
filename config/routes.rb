@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'api/process_crawl_data'
+
   root 'home#index'
 
   get 'search' => 'search#search', as: :search
