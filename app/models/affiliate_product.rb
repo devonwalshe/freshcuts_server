@@ -1,6 +1,6 @@
 class AffiliateProduct < ApplicationRecord
     ### Callbacks
-    before_create :add_tags
+    before_create :add_tags, :add_images
 
 
     ### Relations
@@ -21,6 +21,9 @@ class AffiliateProduct < ApplicationRecord
     
     ### Class methods
     def add_tags
+        if self.affiliate_product_title == nil
+            return
+        end
         ### Get tagslist from file
         require Rails.root + 'lib/import/meat_list.rb'
         list = MEAT_TAG_LIST.uniq
@@ -33,6 +36,18 @@ class AffiliateProduct < ApplicationRecord
             taglist << t
         end
         self.tags = taglist
+    end
+
+    def add_images
+        if self.affiliate_product_image_url == nil
+            return
+        end
+        i = Image.new
+        remote = open(self.affiliate_product_image_url)
+        def remote.original_filename;base_uri.path.split('/').last; end
+        i.asset = remote
+        i.title = remote.original_filename
+        self.images = [i]
     end
 end
 

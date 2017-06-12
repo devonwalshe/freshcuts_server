@@ -60,5 +60,3 @@ gem 'bootstrap-will_paginate'
 gem 'devise'
 gem 'ahoy_matey', '1.6.0'
 gem 'paperclip'
-#gem 'fae-rails', :git => "https://github.com/devonwalshe/fae.git"
-gem 'comfortable_mexican_sofa', '~> 1.12.0'
